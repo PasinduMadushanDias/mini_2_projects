@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Schedule Company Visit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 90%;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-header h2 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .calendar-header button {
+            background-color: #4b56cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .calendar-header button:hover {
+            background-color: #3948a1;
+        }
+
+        .day {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            background-color: #fafafa;
+            position: relative;
+        }
+
+        .day span {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 14px;
+            color: #4b56cc;
+        }
+
+        .day.active {
+            background-color: #4b56cc;
+            color: #fff;
+        }
+
+        .day.active span {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calendar-header">
+            <button id="prev">&lt;</button>
+            <h2 id="month-year">January 2025</h2>
+            <button id="next">&gt;</button>
+        </div>
+
+        <p>Schedule company visits for Lecturers</p>
+
+        <div class="calendar">
+            <div class="day"><span>1</span></div>
+            <div class="day"><span>2</span></div>
+            <div class="day"><span>3</span></div>
+            <div class="day"><span>4</span></div>
+            <div class="day"><span>5</span></div>
+            <div class="day"><span>6</span></div>
+            <div class="day"><span>7</span></div>
+            <div class="day"><span>8</span></div>
+            <div class="day"><span>9</span></div>
+            <div class="day"><span>10</span></div>
+            <div class="day"><span>11</span></div>
+            <div class="day"><span>12</span></div>
+            <div class="day"><span>13</span></div>
+            <div class="day"><span>14</span></div>
+            <div class="day"><span>15</span></div>
+            <div class="day"><span>16</span></div>
+            <div class="day"><span>17</span></div>
+            <div class="day"><span>18</span></div>
+            <div class="day"><span>19</span></div>
+            <div class="day"><span>20</span></div>
+            <div class="day"><span>21</span></div>
+            <div class="day"><span>22</span></div>
+            <div class="day"><span>23</span></div>
+            <div class="day"><span>24</span></div>
+            <div class="day"><span>25</span></div>
+            <div class="day"><span>26</span></div>
+            <div class="day"><span>27</span></div>
+            <div class="day"><span>28</span></div>
+            <div class="day"><span>29</span></div>
+            <div class="day"><span>30</span></div>
+            <div class="day"><span>31</span></div>
+        </div>
+    </div>
+
+    <script>
+        const monthYear = document.getElementById('month-year');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let currentMonth = 0; // January (example)
+        let currentYear = 2025;
+
+        prevButton.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            updateCalendar();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            updateCalendar();
+        });
+
+        function updateCalendar() {
+            const months = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+            monthYear.textContent = `${months[currentMonth]} ${currentYear}`;
+            // Additional code to populate days can be added here
+        }
+    </script>
+</body>
+</html>
