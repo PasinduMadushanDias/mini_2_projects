@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Covid 19</h2>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <input type="text" placeholder="Search...">
+                <div class="user-profile">John Adam</div>
+            </header>
+            <section class="dashboard">
+                <div class="activity">
+                    <div class="card"> <h3>1472</h3> <p>Active Alert</p> </div>
+                    <div class="card"> <h3>1432</h3> <p>Active User</p> </div>
+                    <div class="card"> <h3>6432</h3> <p>Total Users</p> </div>
+                    <div class="card"> <h3>5472</h3> <p>Total Alerts</p> </div>
+                </div>
+                <div class="analytics">
+                    <h3>Analytics</h3>
+                    <p>Positive Review: 60%</p>
+                    <p>Negative Review: 20%</p>
+                </div>
+                <div class="calendar">
+                    <h3>Calendar</h3>
+                    <p>March 2020</p>
+                </div>
+                <div class="patient-stats">
+                    <h3>Patient Statistics</h3>
+                    <canvas id="chart"></canvas>
+                </div>
+                <div class="patient-application">
+                    <h3>Patient Application</h3>
+                    <p>John Adams - Male - 33 yrs</p>
+                    <p>Mary Adams - Female - 17 yrs</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
